@@ -1,0 +1,17 @@
+li{
+    display: inline-block;
+    float: right;
+    margin: auto;
+    margin: 5px;
+
+}
+#md{
+ align:center;
+ margin: auto;
+ margin-top: 5%;
+}
+#p{
+   text-align:right ; 
+   
+    margin-right: 1%;
+}

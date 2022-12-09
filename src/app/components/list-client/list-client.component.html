@@ -1,0 +1,152 @@
+<app-navbar></app-navbar>
+<div class="card">
+  <div class="header">
+      <h4 class="title"><span class="now-ui-icons users_single-02"></span> Annonces</h4>
+      <br>
+      <p class="category">Gestion des annonces publiques</p>
+      <button  rel="tooltip" title="Ajouter un doctorant"
+      class="btn btn-info btn-fill now-ui-icons ui-1_simple-add" ></button>
+    </div>
+    <div class="content">
+    <!-- <div  class="container">
+        <div class="row">
+          <div class="col-md-12 card">
+            <div class="header">
+              <h4 class="title">Ajouter une annonce</h4>
+            </div>
+            <div class="content">
+          
+             <form  #f="ngForm" [formGroup]="this.clientService.dataForm" (ngSubmit)="addData()" >
+                    <div class="col-md-4 ">
+                      <div class="form-group">
+                        <input  type="hidden" name="id"  class="form-control" placeholder="id" id="id" value=""/>
+                      </div>
+                    </div>
+                <div class="row">
+                  <div class="col-md-4 ">
+                    <div class="form-group">
+                      <label for="contact">Contact </label>
+                      <input type="text" name="contact" formControlName="contact" class="form-control" placeholder="Contact" id="contact" value=""/>
+                    </div>
+                  </div>
+                  
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="tel">tel</label>
+                        <input name="tel" type="number" formControlName="tel" class="form-control" placeholder="Tel" id="tel"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="pwd">pwd</label>
+                        <input name="pwd"  type="password" formControlName="pwd" class="form-control" id="password"  placeholder="Pwd"/>
+                      </div>
+                    </div>
+                  <div class="col-md-4 ">
+                    <div class="form-group">
+                      <label for="email">email</label>
+                      <input type="email" name="email" formControlName="email" class="form-control" id="email" placeholder="Email" value=""/>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="form-group">
+                      <label for="libelle">libelle</label>
+                      <input type="text" name="libelle" formControlName="libelle"  class="form-control" placeholder="Libelle" id="libelle" value=""/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="login">login</label>
+                        <input type="text" name="login"  class="form-control" formControlName="login" id="login" placeholder="Login" />
+                      </div>
+                    </div>
+                  
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="fax">fax</label>
+                    <input type="text" name="fax" type="text" formControlName="fax"  class="form-control"  id="fax"  placeholder="fax"/>
+                  </div>
+                </div>
+            </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button type="reset" 
+                      class="btn btn-secondary btn-fill float-right">Annuler</button>
+                    <button type="submit" class="btn btn-info btn-fill float-right">Ajouter</button>
+  
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <br>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>-->
+  <div class="col-md-10" id="pf">
+      <div  class="content">
+        <div class="ct-chart">
+          <div class="table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th class="text-center">contact</th>
+                  <th class="text-center"> email</th>
+                  <th class="text-center"> libelle</th>
+                  <th class="text-center"> tel</th>
+                  <th class="text-center"> fax</th>
+                  <th class="text-center"> login</th>
+                  <th class="text-center"> pwd</th>
+                <!--  <th class="text-center">Urgence</th>-->
+                  <th class="text-center"> Modifier</th>
+                </tr>
+              </thead>
+              <tbody>
+               <!-- <tr class="button" *ngFor="let a of crudApi.listData">
+                <tr class="button" *ngFor="let a of crudApi.listData" (click)="open(content,a)">
+                <tr class="button">-->
+                 <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="now-ui-icons ui-1_calendar-60"></i>
+                  </td>
+                  <tr *ngFor="let items of clientService.listData">
+                  <th class="text-center">{{items.contact}}</th>
+                  <td class="text-center">{{items.email}}</td>
+                  <td class="text-center">{{items.libelle}}</td>
+                  <td class="text-center">{{items.tel}}</td>
+                  <td class="text-center">{{items.fax}}</td>
+                  <td class="text-center">{{items.login}}</td>
+                  <td class="text-center">{{items.pwd}}</td>
+                  <td class="text-center">
+                    <button type="button" (click)="selectData(items)" class="btn btn-warning">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                  </td>
+                  <td  class="text-center"><button class="btn btn-danger" (click)="removeData(items.id)">
+                    <i class="fa fa-trash-o"></i>
+                </button> </td>
+                </tr>
+              </tbody>
+            </table>
+  
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div  class="legend text-center" >
+          <div class="pagination pagination-primary text-center">       
+          </div>
+          <br>
+        </div>
+        <hr *ngIf="true">
+        <div class="stats">
+          <i [ngClass]="'fa fa-clock-o'"></i>DoctoGest © 2020</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  

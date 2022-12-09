@@ -1,0 +1,68 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button>
+                <mat-icon>Menu</mat-icon>
+        </button>
+    </div>
+<div>Liste Categorie</div>
+<div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+   <ul fxLayout fxLayoutGrap="15px" class="navigation-items" layout-align="center horizontal  " >
+      <li>
+            <mat-search-bar [formControl]=(control)></mat-search-bar>
+        </li>
+        <li>
+            <a class="btn btn-sm btn-success text-white pull-right" (click)="addCategorie()">
+                <i class="fa fa-plus"></i>Add Categorie </a>
+        </li>
+
+      <li>
+            <a class="btn btn-sm btn-success text-white pull-right" (click)="addClient()">
+                <i class="fa fa-plus"></i>Ajout Client</a>
+        </li>
+     <!---   <li>
+            <a class="btn btn-sm btn-success text-white pull-right" (click)="addSousCategorie()">
+                <i class="fa fa-plus"></i>Add Sous Categorie </a>
+        </li>-->
+       <li>
+        <a class="btn btn-sm btn-success text-white pull-right" routerLink="/Clients">
+            <i class="fa fa-user-plus"></i>Liste Client</a>   
+        </li>
+</ul>
+</div>
+<div id="p">
+  <li><a *ngIf="!isAuthenticated()"  [routerLink]="['/login']"><i class="fa fa-address-book"></i> Connexion  </a></li>
+ <!-- <a class="navbar-brand" [routerLink]="['/logOut()']" routerLinkActive="router-link-active" > Bienvenue Monsieur &nbsp;   {{authentificationService.username}} </a>-->
+    <li><a *ngIf="isAuthenticated()" (click)="logOut()"><i class="fa fa-address-book"></i> Deconnexion </a></li>
+   </div>
+   <a *ngIf="!isAuthenticated()"  routerLinkActive="router-link-active">&nbsp; Bienvenue Monsieur {{authentificationService.username}}</a>
+</mat-toolbar>
+<div class="pricing-header mx-auto">
+<div class="table-responsive">
+<div class="col-md-6" id="md">
+<table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg ">
+<thead>
+<tr>
+<th scope="col">Id</th>
+<th scope="col">Code</th>
+<th scope="col">Libelle</th>
+<th class="text-center" scope="col">Action</th>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let item of crudApi.listData">
+        <th>{{item.id}}</th>
+        <th>{{item.code}}</th>
+        <th>{{item.libelle}}</th>
+       <td><button class="btn btn-warning" (click)="selectData(item)">
+            <i class="fa fa-pencil-square-o"></i>
+        </button> </td>
+
+        <td><button class="btn btn-danger" (click)="removeData(item.id)">
+            <i class="fa fa-trash-o"></i>
+        </button> </td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>

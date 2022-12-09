@@ -1,0 +1,84 @@
+<div class="col-md-10">
+  <div id="pf">
+<div  class="container ">
+  <div class="row">
+    <div class="col-md-12 card">
+      <div class="header">
+        <h4 class="title">Ajouter une annonce</h4>
+      </div>
+      <div class="content">
+         <form [formGroup]="this.clientService.dataForm" (ngSubmit)="onSubmit()">
+
+          <div class="col-md-4 ">
+            <div class="form-group">
+              <input  type="hidden" name="id"  class="form-control" placeholder="id" id="id" value=""/>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-4 ">
+              <div class="form-group">
+                <label for="contact">Contact </label>
+                <input type="text" name="contact"   formControlName="contact"   class="form-control" placeholder="Contact" value=""/>
+              </div>
+            </div>
+            
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="tel">tel</label>
+                  <input name="tel" type="number"   formControlName="tel"  class="form-control" id="tel" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="pwd">pwd</label>
+                  <input name="pwd"  type="password"  formControlName="pwd" class="form-control"  placeholder="PWD"/>
+                </div>
+              </div>
+            <div class="col-md-4 ">
+              <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" name="email" formControlName="email"  class="form-control" placeholder="Email" value=""/>
+              </div>
+          </div>
+          <div class="col-md-4 ">
+              <div class="form-group">
+                <label for="libelle">libelle</label>
+                <input type="text" name="libelle"  formControlName="libelle"   class="form-control" placeholder="Libelle" value=""/>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="login">login</label>
+                  <input type="text" name="login"  formControlName="login"  class="form-control" placeholder="Login"  />
+                </div>
+              </div> 
+            
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="fax">fax</label>
+              <input name="fax" type="text"   formControlName="fax"  class="form-control"  placeholder="fax"/>
+            </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <button type="reset" 
+              class="btn btn-secondary" [mat-dialog-close]  ><i class="fa fa-close"></i>Annuler</button>
+              <button type="submit" [mat-dialog-close]  class="btn btn-info btn-fill float-right">Ajouter</button>
+
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

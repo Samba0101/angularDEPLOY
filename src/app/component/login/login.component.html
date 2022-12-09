@@ -1,0 +1,39 @@
+<!--<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+                <h1> Please Sign up</h1>
+             <form class="form-signin"  #signinForm="ngForm">
+                    <label for="inputemail" class="sr-only"> Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="email Adresse" required
+                    autofocus ngModel />
+
+                    <label for="inputpassword" class="sr-only"> Email</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="password" required
+                        autofocus ngModel /> 
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" > Sign up</button>
+  
+            </form>
+         </div>
+    </div>
+</div>-->
+<div class="col-md-6" id="pm">    
+    <div class="card">
+      <div class="card-header">
+        <h2 id="km">Merci de vous authentifier</h2>
+      </div>
+      <div class="card-body">
+        <form  #f="ngForm" (ngSubmit)="onLogin(f.value)">
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" class="form-control" ngModel id="username" name="username">                             
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" ngModel id="password" name="password"> 
+            </div>                       
+          <button  type="submit"  class="btn btn-success">Login</button>
+        </form> 
+      </div>
+    </div>
+  </div>
