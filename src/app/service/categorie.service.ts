@@ -9,7 +9,7 @@ import { AuthentificationService } from './authentification.service';
 })
 export class CategorieService {
   [x: string]: any;
-  baseUrl="http://192.168.0.103:8080/api/Categories";
+  baseUrl="http://192.168.0.102:8080/api/Categories";
   choixmenu : string = 'A';
   public dataForm!: FormGroup;
   listData!: Categorie[];
