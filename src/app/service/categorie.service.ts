@@ -22,24 +22,24 @@ export class CategorieService {
 
 
 addcategorie(Categorie :Categorie): Observable<Object> {
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
   return this.http.post(`${this.baseUrl}`,Categorie,{headers:headers});
 }
 updateData(id: number,value:any): Observable<Object>{
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
   return this.http.put(`${this.baseUrl}/${id}`,value,{headers:headers});
 }
 
 getData( id: number): Observable<Object>{
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
   return this.http.get(`${this.baseUrl}/${id}`,{headers:headers});
 }
 deleteData(id: number): Observable<any>{
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
  return this.http.delete(`${this.baseUrl}/${id}`,{headers:headers});
 }
 getAll(): Observable<any>{
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
 return this.http.get(`${this.baseUrl}`,{headers:headers});
 }
 logout(){

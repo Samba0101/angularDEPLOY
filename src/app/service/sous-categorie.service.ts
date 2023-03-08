@@ -8,7 +8,7 @@ import { SousCategorie } from '../model/sous-categorie';
   providedIn: 'root'
 })
 export class SousCategorieService {
-  baseUrl="http://localhost:8080/api/SousCategories";
+  baseUrl="http://192.168.0.102:8080/api/SousCategories";
   choixmenu : string = 'A';
   public dataForm!: FormGroup;
   listData!: SousCategorie[];
