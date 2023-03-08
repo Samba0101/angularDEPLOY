@@ -12,7 +12,7 @@ export class AuthentificationService  {
 jwt !:string;
  public username !:string;
  role!:Array<string>;
-  public baseUrl = 'http://192.168.0.102:8080';
+  public baseUrl = 'http://192.168.0.104:8080';
   jwthelper: any;
   convertToUser_ !: false;
  
