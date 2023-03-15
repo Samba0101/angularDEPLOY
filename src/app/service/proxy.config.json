@@ -1,0 +1,10 @@
+{ "/api/Categories": {     
+"target": "http://192.168.0.105:8080/api/Categories",     
+"secure": false,     
+"changeOrigin": true,     
+"pathRewrite": {"^/api/Categories" : ""} },
+ "/api/login": {     
+"target": "http://192.168.0.105:8080/login",     
+"secure": false,     
+"changeOrigin": true,     
+"pathRewrite": {"^/api/login" : ""} }}

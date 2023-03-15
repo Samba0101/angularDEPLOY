@@ -11,7 +11,7 @@ import { AuthentificationService } from './authentification.service';
 })
 export class ClientService {
   [x: string]: any;
-  baseUrl="http://192.168.1.44:8080/api/Clients";
+  baseUrl="http://192.168.0.105:8080/api/Clients";
   choixmenu : string = 'A';
   public dataForm!: FormGroup;
   listData!: Client[];

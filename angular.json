@@ -13,6 +13,9 @@
           "strict": true
         }
       },
+      "serve": {       
+        "options": { 
+            "port": 80, "host": "0.0.0.0", "disableHostCheck": true, "proxyConfig": "src/proxy.conf.json" }},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
