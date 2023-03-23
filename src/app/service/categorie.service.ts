@@ -9,7 +9,7 @@ import { AuthentificationService } from './authentification.service';
 })
 export class CategorieService {
   [x: string]: any;
-  baseUrl="http://192.168.0.105:8080/api/Categories";
+  baseUrl="http://192.168.0.107:8080/api/Categories";
   choixmenu : string = 'A';
   public dataForm!: FormGroup;
   listData!: Categorie[];
@@ -22,24 +22,24 @@ export class CategorieService {
 
 
 addcategorie(Categorie :Categorie): Observable<Object> {
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
   return this.http.post(`${this.baseUrl}`,Categorie,{headers:headers});
 }
 updateData(id: number,value:any): Observable<Object>{
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
   return this.http.put(`${this.baseUrl}/${id}`,value,{headers:headers});
 }
 
 getData( id: number): Observable<Object>{
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
   return this.http.get(`${this.baseUrl}/${id}`,{headers:headers});
 }
 deleteData(id: number): Observable<any>{
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
  return this.http.delete(`${this.baseUrl}/${id}`,{headers:headers});
 }
 getAll(): Observable<any>{
-  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt,'Access-Control-Allow-Origin': '*'})
+  let headers=new HttpHeaders({'authorization':'Bearer '+this.authentificationService.jwt})
 return this.http.get(`${this.baseUrl}`,{headers:headers});
 }
 logout(){
