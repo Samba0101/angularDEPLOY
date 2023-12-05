@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class PdfGeneratorService {
   baseUrl="http://localhost:8080/api";
+  //private baseUrl: string = environment.baseUrl+'/api'
   constructor(private http: HttpClient) {
   }
 

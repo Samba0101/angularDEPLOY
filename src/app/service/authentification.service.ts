@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -12,7 +13,8 @@ export class AuthentificationService  {
 jwt !:string;
  public username !:string;
  role!:Array<string>;
-  public baseUrl = 'http://192.168.0.109:8080';
+ // public baseUrl = 'http://localhost:8084';
+  private baseUrl: string = environment.baseUrl
   jwthelper: any;
   convertToUser_ !: false;
  

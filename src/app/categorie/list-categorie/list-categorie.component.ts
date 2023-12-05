@@ -10,6 +10,7 @@ import { AddSousCategorieComponent } from 'src/app/sousCategorie/add-sous-catego
 import { AuthentificationService } from 'src/app/service/authentification.service';
 import { ClientService } from 'src/app/service/client.service';
 import { AddClientComponent } from 'src/app/components/add-client/add-client.component';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -52,11 +53,11 @@ addClient(){
 
 onSubmit(){
   this.submitted= true;
-  if(this.crudApi.choixmenu=="A"){
+ /* if(this.crudApi.choixmenu=="A"){
     this.addCategorie(); 
-  }else{
+  }else{*/
     this.updateCategorie();
-  }
+  
 }
 addCategorie(){
     const dialogConfig= new MatDialogConfig();
@@ -76,7 +77,7 @@ addCategorie(){
      this.crudApi.getAll().subscribe(
         response=>{this.crudApi.listData =response;}
       );
-     /// this.router.navigate(['/Categories']);
+    // this.router.navigate(['/Categories']);
       });
 }
 addSousCategorie(){
@@ -100,11 +101,14 @@ addSousCategorie(){
    getData(){
     this.crudApi.getAll().subscribe(
        response =>{this.crudApi.listData = response;
+        headers: new HttpHeaders({
+          'Access-Control-Allow-Origin': '*'
+        })
      
       }
     );
   }
-  addData(){
+ /*addData(){
     this.crudApi.addcategorie(this.crudApi.dataForm.value)
     .subscribe(data =>{
       this.dialogRef.close();
@@ -116,7 +120,7 @@ addSousCategorie(){
       this.router.navigate(['/Categories']);
       this.ResetForm();
       });
-    }
+    }*/
   removeData(id:number){
       if(window.confirm('Etes Vous sure de vouloir supprimer cette categorie')){
         this.crudApi.deleteData(id).subscribe(data =>{
@@ -127,7 +131,7 @@ addSousCategorie(){
           (error) => console.log(error));
         }
   }
-  selectData(item:Categorie){
+ selectData(item:Categorie){
    
     this.crudApi.choixmenu="M";
     this.crudApi.dataForm= this.fb.group(Object.assign({},item));

@@ -116,7 +116,7 @@ ResetForm() {
 
 
 
- addCategorie(){
+/* addCategorie(){
     //this.crudApi.choixmenu="M";
    // this.crudApi
     const dialogConfig= new MatDialogConfig();
@@ -125,7 +125,7 @@ ResetForm() {
     dialogConfig.width="50%";
     this.matDialog.open(AddCategorieComponent,dialogConfig);
     this.ResetForm();
-  }
+  }*/
   removeData(id:number){
       if(window.confirm('Etes Vous sure de vouloir supprimer cette categorie')){
         this.crudApi.deleteData(this.crudApi.dataForm.value.id).subscribe(data =>{
@@ -137,7 +137,7 @@ ResetForm() {
       }
   }
 
-  selectData(item :Categorie){
+ /* selectData(item :Categorie){
     this.crudApi.choixmenu="M";
     this.crudApi.dataForm= this.fb.group(Object.assign({},item));
     const dialogConfig= new MatDialogConfig();
@@ -145,6 +145,6 @@ ResetForm() {
     dialogConfig.disableClose=true;
     dialogConfig.width="50%";
     this.matDialog.open(AddCategorieComponent,dialogConfig);
-  }
+  }*/
 }
 

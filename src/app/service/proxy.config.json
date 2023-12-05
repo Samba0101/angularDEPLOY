@@ -1,10 +1,10 @@
 { "/api/Categories": {     
-"target": "http://192.168.0.109:8080/api/Categories",     
+"target": "http://172.42.42.101:30163/api/Categories",     
 "secure": false,     
 "changeOrigin": true,     
 "pathRewrite": {"^/api/Categories" : ""} },
  "/api/login": {     
-"target": "http://192.168.0.109:8080/login",     
+"target": "http://172.42.42.101:30163/login",     
 "secure": false,     
 "changeOrigin": true,     
 "pathRewrite": {"^/api/login" : ""} }}

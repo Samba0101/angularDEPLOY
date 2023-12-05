@@ -5,13 +5,15 @@ import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { Client } from '../model/client';
 import { AuthentificationService } from './authentification.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
   [x: string]: any;
-  baseUrl="http://192.168.0.109:8080/api/Clients";
+  //baseUrl="http://localhost:8084/api/Clients";
+  private baseUrl: string = environment.baseUrl+'/api/Clients'
   choixmenu : string = 'A';
   public dataForm!: FormGroup;
   listData!: Client[];

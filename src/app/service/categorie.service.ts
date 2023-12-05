@@ -4,12 +4,14 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 import { Categorie } from '../model/categorie';
 import { AuthentificationService } from './authentification.service';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class CategorieService {
   [x: string]: any;
-  baseUrl="http://192.168.0.109:8080/api/Categories";
+ // baseUrl="http://localhost:8084/api/Categories";
+  private baseUrl: string = environment.baseUrl+'/api/Categories'
   choixmenu : string = 'A';
   public dataForm!: FormGroup;
   listData!: Categorie[];

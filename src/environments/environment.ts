@@ -1,9 +1,14 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+interface environment {
+  production: boolean;
+  baseUrl: any// whatever is the correct type
+}
 
 export const environment = {
-  production: false
+  production: true,
+  baseUrl: 'http://172.42.42.101:30163'
 };
 
 /*

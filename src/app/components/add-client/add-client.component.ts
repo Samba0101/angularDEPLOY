@@ -1,7 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/service/client.service';
 //import { ToastrService } from 'ngx-toastr';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 //import { MatDialogConfig } from '@angular/material/dialog';
@@ -32,7 +32,7 @@ export class AddClientComponent implements OnInit {
   annonces: any;
 
  
- constructor(public clientService: ClientService,private modalService : NgbModal,public fb: FormBuilder,private toastr :ToastrService, private matDialog :MatDialog ,@Inject(MAT_DIALOG_DATA) private data :any,
+ constructor(public clientService: ClientService,public fb: FormBuilder,private toastr :ToastrService, private matDialog :MatDialog ,@Inject(MAT_DIALOG_DATA) 
  public dialogRef:MatDialogRef<AddClientComponent>,){}
  //public crudApi!: ClientService 
 
